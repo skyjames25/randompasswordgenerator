@@ -6,21 +6,26 @@ let passwordBox1 = document.querySelector(".password-box1")
 let passwordBox2 = document.querySelector(".password-box2")
 
 
+function generateRandomPassword() {
+    let randomPasswords = ""
+    for (let i=0; i<15; i++){
+        let chr = characters[Math.floor(Math.random() * characters.length)]
+        randomPasswords += chr
+    }
+    return randomPasswords
 
-
+}
 
 
 function generatePasswords() {
     let passwordsList = []
-
     for (let i=0;i<2;i++){
-        randomPasswords = ""
-        for (let i=0; i<15; i++){
-            let chr = characters[Math.floor(Math.random() * characters.length)]
-            randomPasswords +=chr
-        }
-        passwordsList.push(randomPasswords)
+        let randomPasswordGenerated = generateRandomPassword()
+        console.log(randomPasswordGenerated)
+        passwordsList.push(randomPasswordGenerated)
     }
+
     passwordBox1.textContent = passwordsList[0]
     passwordBox2.textContent = passwordsList[1]
 }
+
