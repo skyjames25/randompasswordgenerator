@@ -7,13 +7,12 @@ let passwordBox2 = document.querySelector(".password-box2")
 
 
 function generateRandomPassword() {
-    let randomPasswords = ""
+    let randomPassword = ""
     for (let i=0; i<15; i++){
         let chr = characters[Math.floor(Math.random() * characters.length)]
-        randomPasswords += chr
+        randomPassword += chr
     }
-    return randomPasswords
-
+    return randomPassword
 }
 
 
@@ -21,7 +20,6 @@ function generatePasswords() {
     let passwordsList = []
     for (let i=0;i<2;i++){
         let randomPasswordGenerated = generateRandomPassword()
-        console.log(randomPasswordGenerated)
         passwordsList.push(randomPasswordGenerated)
     }
 
